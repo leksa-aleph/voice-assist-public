@@ -1,0 +1,18 @@
+# === Распознавание: ONNX Runtime + numpy, без PyTorch ===
+# Модели (GigaAM v3 e2e RNNT int8, Silero VAD v6, WeSpeaker) - models/onnx/,
+# см. README. Одна сборка для любых видеокарт: всё считается на процессоре.
+# 1.25+ считает int8-кодировщик GigaAM вдвое медленнее (Ryzen 7500F:
+# ×26 к реальному времени на 1.24.4 против ×14 на 1.25-1.30) - держим 1.24.
+# Сборка с DirectML: тот же процессорный рантайм плюс любая видеокарта на Windows.
+onnxruntime-directml==1.24.4; sys_platform == 'win32'
+onnxruntime==1.24.4; sys_platform != 'win32'
+numpy>=1.26
+
+# === Звук ===
+sounddevice
+av                  # расшифровка файлов: звук из любых видео и записей (FFmpeg внутри)
+proc-tap
+pycaw
+
+# === Интерфейс ===
+PyQt6

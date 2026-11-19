@@ -1,0 +1,80 @@
+# venvs
+venv/
+.venv/
+.venv-parakeet/
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# secrets
+.env
+*.token
+.rpc_token
+tools/.rpc_token
+discord_secret.txt
+
+# voice prints (personal data)
+voices/
+*.npz
+
+# models (too big for git, see Releases)
+models/
+
+# build output
+build/
+build-cuda/
+dist/
+dist-cuda/
+spec-cuda/
+*.spec
+
+# backups and archives
+*.before-*
+*.corrupted-*
+*.py.before-*
+*.bak
+archive/
+voice-assist-test-*/
+*.zip
+*.tar
+
+# legacy pre-GUI scripts
+enroll.py
+live.py
+
+# audio
+*.wav
+*.mp3
+*.mp4
+*.flac
+samples/
+
+# IDE / OS / logs
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+.*.kate-swp
+*.swp
+*~
+# one-off RPC debug probes (contain client_secret)
+tools/rpc_speaking.py
+tools/rpc_probe.py
+requirements.lock.txt
+
+# legacy test, needs HF token and local wav samples
+tests/test_short_emb.py
+
+# installer output (gigabytes, goes to Releases)
+installer/output/
+
+# Discord bridge: modules are installed by npm ci, node.exe is copied at build time
+discord_bridge/node_modules/
+discord_bridge/node.exe
+discord_bridge/LICENSE.node.txt
+
+# сборка: spec - исходник, его храним
+!voice-assist.spec
